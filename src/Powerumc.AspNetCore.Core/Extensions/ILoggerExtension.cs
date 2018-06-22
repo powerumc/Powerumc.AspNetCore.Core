@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 
-namespace Powerumc.AspNetCore.Core
+namespace Powerumc.AspNetCore.Core.Extensions
 {
     public static class ILoggerExtension
     {
