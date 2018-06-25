@@ -129,3 +129,8 @@ public class RssFeedsService : IRssFeedsService
     }
 }
 ```
+
+
+## See also
+- https://github.com/powerumc/Powerumc.AspNetCore.Mvc.SimpleConfig
+- https://github.com/powerumc/microservice-architecture-quick-start
