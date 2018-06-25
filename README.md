@@ -7,7 +7,7 @@ Easyily build up ours Micro Services Architecture(MSA) and Domain Driven Develop
 
 ### RegisterAttribute
 
-```
+```csharp
 public interface ITestService
 {
     Task<List<string>> GetStringsAsync();
