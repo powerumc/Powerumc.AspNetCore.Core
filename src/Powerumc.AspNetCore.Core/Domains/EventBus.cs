@@ -28,7 +28,12 @@ namespace Powerumc.AspNetCore.Core.Domains
                 {
                     var handlerObject = scope.ServiceProvider.GetService(handler);
                     var handlerType = typeof(IDomainEventHandler<>).MakeGenericType(@event.GetType());
-                    handlerType.GetMethod("Handle")?.Invoke(handlerObject, new object[] {@event});
+                    var method = handlerType.GetMethod("Handle");
+                    
+                    if (method == null)
+                        throw new NotImplementedException("Handle");
+                    
+                    method.Invoke(handlerObject, new object[] {@event});
                 }
             }
         }
