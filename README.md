@@ -121,10 +121,6 @@ public class RssFeedsService : IRssFeedsService
 
     public async Task CreateAsync(Domain.Requests.V1.RssFeedCreateRequest request)
     {
-        Guard.ThrowIfNull(request, nameof(request));
-        Guard.ThrowIfNullOrWhitespace(request.Title, nameof(request.Title));
-        Guard.ThrowIfNullOrWhitespace(request.Url, nameof(request.Url));
-        
         _logger.Log(_traceId, request.ToJson());
         
         _eventBus.Publish(new RssFeedCreateDomainEvent(new Author(request.Title, request.Url)));
