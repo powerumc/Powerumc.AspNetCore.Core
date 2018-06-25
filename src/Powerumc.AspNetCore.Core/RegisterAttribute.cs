@@ -7,7 +7,7 @@ namespace Powerumc.AspNetCore.Core
     public class RegisterAttribute : Attribute
     {
         public Type RegistrationType { get; }
-        public ServiceLifetime ServiceLifetime { get; } = ServiceLifetime.Singleton;
+        public ServiceLifetime Lifetime { get; } = ServiceLifetime.Singleton;
 
         public RegisterAttribute(Type registrationType)
         {
@@ -16,7 +16,7 @@ namespace Powerumc.AspNetCore.Core
 
         public RegisterAttribute(Type registrationType, ServiceLifetime serviceLifetime) : this(registrationType)
         {
-            this.ServiceLifetime = serviceLifetime;
+            this.Lifetime = serviceLifetime;
         }
     }
 }
